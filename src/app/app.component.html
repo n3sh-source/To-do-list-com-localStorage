@@ -1,2 +1,11 @@
 <h1>To-do list com localStorage</h1>
-<input type="text" id="text" />
+<input type="text" id="text" [(ngModel)]="task" />
+<button (click)="addTarefa()">Add</button>
+
+<p>To-do List</p>
+<ul *ngFor="let task of showTarefa(); index as i">
+  <li>
+    {{ task }}
+    <button (click)="remove(i)">concluída</button>
+  </li>
+</ul>
